@@ -21,3 +21,17 @@ We will approximate standard error to 0.027[^longnote]
     $$
     SE = \sqrt{\frac{p(1-p)}{n}} \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
     $$
+
+
+## math example 4.2 
+
+
+## math example 4.3
+
+
+## math example 4.4
+
+
+## math example 4.5
+
+

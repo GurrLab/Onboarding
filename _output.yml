@@ -1,9 +1,13 @@
 bookdown::gitbook:
   css: style.css
+  number_sections: false
+  # includes:
+  #   before_body: "bookdown-demo_files/figure-latex/GURR-Full_Color.png"
   config:
     toc:
       before: |
-        <li><a href="./">A Minimal Book Example</a></li>
+        <li><a href="./">Gurr Lab Onboarding & Resources</a></li>
+        <li class="toc-logo"><a href="./"><img src="bookdown-demo_files/figure-latex/GURR-Full_Color.png" width='150px'></a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
@@ -16,3 +20,9 @@ bookdown::pdf_book:
   keep_tex: yes
 bookdown::epub_book: default
 bookdown::bs4_book: default
+output:
+  bookdown::pdf_book:
+    includes:
+      in_header: preamble.tex
+bookdown::html_book:
+  css: style.css

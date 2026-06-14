@@ -12,3 +12,21 @@ pre {
 pre code {
   white-space: inherit;
 }
+.title {
+  color: #0066cc;                /* Change color (Hex or Name) */
+  font-family: "Roboto", serif;  /* Change font type */
+  font-size: 60px;               /* Change size */
+}
+/* Change the default font for the entire body of the book */
+.book .book-body .page-wrapper .page-inner section.normal {
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  color: #333;
+}
+/* Change the color for all links */
+a {
+  color: #0066cc;
+}
+.hidden-header {
+  display: none;
+}
