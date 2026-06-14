@@ -9,8 +9,8 @@ bookdown::gitbook:
         <li><a href="./">Gurr Lab Onboarding & Resources</a></li>
         <li class="toc-logo"><a href="./"><img src="bookdown-demo_files/figure-latex/GURR-Full_Color.png" width='150px'></a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+        <li><a href="https://github.com/GurrLab/Onboarding" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/GurrLab/Onboarding/bookdown-demo/edit/master/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
