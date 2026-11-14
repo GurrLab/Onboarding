@@ -1,0 +1,93 @@
+# Conduct & Expectations {#conduct}
+
+This guide is iterative — input from colleagues and lab members is expected to strengthen the lab mission. Feedback is welcome at [samuel.gurr@oregonstate.edu](mailto:samuel.gurr@oregonstate.edu).
+
+---
+
+## Code of conduct {#code-of-conduct}
+
+A psychologically safe and harassment-free working environment is pivotal to enable us to *belong and be challenged* together (see [Pillar 1](#belong)).
+
+**Harassment includes** — but is not limited to — offensive verbal comments related to gender, gender identity and expression, age, sexual orientation, disability, socioeconomic status, physical appearance, body size, race, religion (or lack thereof); sexual images in public spaces; deliberate intimidation; stalking; harassing photography or recording; sustained disruption of events; inappropriate physical contact; and unwelcome sexual attention.
+
+Lab members asked to stop any harassing behavior are expected to comply immediately.
+
+### What is psychological safety? {-}
+
+> *"Psychological safety is defined as a shared belief that the team is safe for interpersonal risk-taking. Such interpersonal risks include open communication, voicing concerns, asking questions and seeking feedback without fear of judgment. A psychologically safe environment allows all individuals to be their authentic selves and reduce work-related stress, leading to increased engagement and learning."*
+>
+> — Hardie et al. (2022), *BMC Medical Education*, 22(1), 816.
+
+### Reporting {-}
+
+If you are being harassed, notice that someone else is being harassed, or have any other concerns:
+
+- **Talk to the PI** directly — the door is always open
+- **OSU Office of Equal Opportunity and Access (EOA):** 2150 SW Jefferson Way, 330 Snell Hall, Corvallis, OR 97331 · 541-737-3556 · [Equal.Opportunity@oregonstate.edu](mailto:Equal.Opportunity@oregonstate.edu) · [eoa.oregonstate.edu](https://eoa.oregonstate.edu) (online reporting form available)
+- **Graduate ombudsperson:** [gradschool.oregonstate.edu](https://gradschool.oregonstate.edu) — a confidential, neutral resource for graduate students
+- **OSU Policies on Discrimination & Discriminatory Harassment:** [policy.oregonstate.edu](https://policy.oregonstate.edu/policy/discrimination-and-discriminatory-harassment)
+
+---
+
+## What I expect from you {#expect-you}
+
+These expectations apply to all lab members, with role-specific notes where relevant. They are meant to support your growth, not to micromanage it.
+
+### Scientific integrity {-}
+
+- **Be honest about your data and results.** Report what you found, not what you hoped to find. Discuss anomalies and unexpected results openly.
+- **Document everything at time of collection.** A lab notebook entry written a week later is a reconstruction. Keep contemporaneous records.
+- **Pre-register your study designs** on OSF before data collection begins. See [Open & transparent science](#open-science).
+- **Archive all data and code publicly** at or before publication. No exceptions.
+
+### Communication {-}
+
+- **Be proactive.** If you are stuck, behind, or uncertain — say so early. The PI would far rather hear about a problem early than discover it at a deadline.
+- **Honor your commitments.** If you agreed to deliver something, deliver it. If circumstances change, communicate before the deadline, not after.
+- **Respect your colleagues, mentors, and mentees.** A sense of belonging starts with how we treat one another. Expect to both give and receive productive critique.
+- **Communicate schedule changes ≥ 48 hours in advance** when possible, especially for husbandry responsibilities.
+
+### Lab citizenship {-}
+
+- **Attend lab meetings** unless a scheduling conflict is communicated in advance.
+- **Contribute to shared tasks** — cleaning, stocking, maintaining communal spaces. No task is beneath any lab member.
+- **Mentor junior members** as you gain seniority. This is a professional obligation, not optional.
+- **Treat all organisms with care.** Your husbandry schedule deserves diligence and attention. Hatfield has a resident veterinarian who conducts unannounced welfare checks. Neglect of organisms in any shared space will not be tolerated.
+
+### Your work {-}
+
+- **Write every week.** Even rough draft material. Writing is thinking; waiting until you "have something to say" delays both.
+- **Present your work.** At lab meeting annually at minimum; at an external conference or seminar as early as your project allows.
+- **Make your code and data open** from the start. Version-control everything on GitHub; archive on OSF or a domain repository at publication.
+
+---
+
+## What you can expect from me {#expect-pi}
+
+These are the PI's commitments to every lab member.
+
+### Time and feedback {-}
+
+- **Regular meetings** — bi-weekly 1-on-1s at minimum; more during critical periods
+- **Manuscript and proposal feedback** returned within 2 weeks of submission (sooner during crunch periods)
+- **Response to emails and Discord messages** within 2 business days under normal circumstances
+
+### Mentorship and advocacy {-}
+
+- **Strong letters of recommendation** for positions, awards, and fellowships that align with your goals — written with care and submitted on time
+- **Introductions to collaborators** and professional networks relevant to your work and career direction
+- **Nomination for awards and fellowships** as opportunities arise
+- **Honest, constructive feedback** about your progress, strengths, and areas for development — delivered with care
+
+### Resources {-}
+
+- **Funding for tuition, stipend, and research** per OSU graduate student agreements (graduate students)
+- **Support for conference attendance** at least once per year when work is being presented
+- **Clear authorship conversations** early in every project — no surprises at submission
+- **A co-created IDP** (Individual Development Plan) reviewed annually
+
+### Lab climate {-}
+
+- **A harassment-free, inclusive environment** as described in the Code of Conduct
+- **Transparency about lab finances, project status, and future directions** to the extent that it is relevant and appropriate
+- **Openness to feedback** about my own mentoring style and the lab's culture — I am not the finished product either

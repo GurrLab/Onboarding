@@ -6,19 +6,13 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\usepackage{fancyhdr} % Use the fancyhdr package for header/footer customization
+\usepackage{fancyhdr}
 \pagestyle{fancy}
-% Clear all header and footer fields
 \fancyhead{}
 \fancyfoot{}
-% Define the header content (e.g., just the page number on the right)
-% You can customize [R] for right, [L] for left, [C] for center
 \fancyhead[R]{\thepage}
-% Optionally, add section titles without "Chapter" prefix
 \fancyhead[LO]{\slshape\nouppercase\rightmark}
-% Remove the "Chapter" prefix from the mark used in the header
 \makeatletter
 \renewcommand\chaptermark[1]{\markboth{#1}{}}
 \makeatother
-% Optional: remove the rule line in the header
 \renewcommand\headrulewidth{0pt}

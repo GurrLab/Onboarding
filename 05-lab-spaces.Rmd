@@ -1,0 +1,115 @@
+# Lab Spaces & Collaborations {#lab-spaces}
+
+An overview of where the GurrLab works, the tools we use, and the research partnerships we maintain at Hatfield and beyond. Update placeholder text and add photos as the lab grows.
+
+---
+
+## Lab spaces {#spaces}
+
+### Wet lab {#wet-lab}
+
+**Location:** [Building name], Room [XXX] · Hatfield Marine Science Center, Newport, OR  
+Access requires a valid HMSC keycard. Contact [PI or lab manager] to request access during your first week.
+
+| Space | Description |
+|---|---|
+| Main bench area | Fume-hood equipped benches for chemical work, solution preparation, and sample extraction. [Add details about layout, hood count.] |
+| Cold storage | Walk-in cold room at 4 °C and −20 °C / −80 °C freezer banks. [Describe storage organization protocol.] |
+| Autoclave & prep | Shared autoclave for sterilization. [Note sign-up requirements or shared-use protocols.] |
+
+### Dry lab & computing {#dry-lab}
+
+Dedicated computing and data-analysis workspace within the lab suite.
+
+| Resource | Description |
+|---|---|
+| Workstations | [Number] high-memory workstations for bioinformatics, statistical modeling, and visualization. [Add specs.] |
+| Local data server | [Describe NAS or on-site server — capacity, backup schedule, access protocol.] For large HPC jobs see the [Computing chapter](#computing). |
+
+### Organism husbandry {#husbandry}
+
+Seawater systems and rearing facilities for maintaining live study organisms.
+
+<div class="callout-warn">
+Hatfield has a resident veterinarian who conducts unannounced welfare checks. All husbandry spaces must be kept clean and life-support systems monitored on the agreed schedule. Report any concerns immediately via Discord `#urgent` or directly to the PI.
+</div>
+
+| Space | Description |
+|---|---|
+| Flow-through seawater system | [Describe tank capacity, flow rates, filtration, and organism types — oysters, fish, algae, etc.] |
+| Experimental mesocosms | [Describe tank arrays, CO₂ / temperature manipulation capacity, and ongoing treatment designs.] |
+| Algae culture room | [Describe microalgae strains cultured, lighting rigs, and culture volume maintained.] |
+
+### Field & boat access {#field}
+
+| Resource | Description |
+|---|---|
+| Yaquina Bay field sites | [Describe intertidal / subtidal sampling stations, GPS coordinates if applicable, tidal access constraints.] |
+| Research vessel | [Vessel name, tonnage, booking process, required certifications — small-boat safety, STCW, boater card.] |
+| Oregon coast sites | [Additional coastal / estuarine sites — Netarts Bay, Tillamook, Coos Bay — access and ongoing sampling.] |
+
+---
+
+## Equipment {#equipment}
+
+### Analytical instruments {#analytical}
+
+| Instrument | Description |
+|---|---|
+| DIC & total alkalinity analyzer | [Manufacturer, model, throughput. Note SOP location and training requirements.] |
+| Spectrophotometer | [Manufacturer, model, wavelength range. Note calibration schedule.] |
+| Respirometry system | [Closed- or intermittent-flow chambers, O₂ optodes, data-acquisition software.] |
+| Multiparameter sonde | [YSI EXO or similar — parameters logged, calibration protocol, deployment procedure.] |
+
+### Molecular biology {#molecular}
+
+| Instrument | Description |
+|---|---|
+| Thermocycler & qPCR | [Manufacturer, model, well format. Cycling protocols and fluorescence channels.] |
+| Nucleic acid quantification | [NanoDrop, Qubit, or Bioanalyzer — what's on-site vs. what requires HMSC/OSU core access.] |
+| Gel electrophoresis | [Gel box sizes, power supply, imaging system. Note staining protocol.] |
+
+### Imaging & microscopy {#imaging}
+
+| Instrument | Description |
+|---|---|
+| Stereo / dissecting microscope | [Manufacturer, magnification range, camera attachment. Scale bar calibration and ImageJ workflow location.] |
+| Compound microscope | [Manufacturer, objective set, fluorescence capability if applicable.] |
+| Image analysis | ImageJ / Fiji for morphometric measurements. R packages `EBImage` and `momocs` for shell-shape analysis. SOPs available in the shared Drive. |
+
+### Field equipment {#field-equip}
+
+| Item | Description |
+|---|---|
+| Benthic sampling gear | [Sieves, sediment corers, dredges, quadrats, collection containers. Storage location and check-out procedure.] |
+| Portable meters | [YSI Pro, pH pen, refractometer, DO meter. Calibration protocol before each deployment.] |
+| Data loggers & moorings | [HOBO, PME miniDOT, or similar. Mooring hardware, deployment depth, data-offload protocol.] |
+
+---
+
+## Collaborations {#collaborations}
+
+### Hatfield partnerships {#hmsc-collabs}
+
+| Partner | Nature of collaboration |
+|---|---|
+| [Collaborator Lab] · HMSC | [Describe — shared equipment, joint field campaigns, co-supervised students, co-authored manuscripts.] Contact: [Name], [email\@oregonstate.edu] |
+| [Collaborator Lab] · HMSC | [Describe — shared seawater systems, co-use of HMSC boat, joint outreach at the visitor center.] Contact: [Name], [email\@oregonstate.edu] |
+| Oregon Sea Grant · HMSC/OSU | [Active Sea Grant-funded projects, extension partnerships, Oregon Coastal Management Program involvement.] [seagrant.oregonstate.edu](https://seagrant.oregonstate.edu) |
+
+### OSU campus collaborations {#osu-collabs}
+
+| Partner | Nature of collaboration |
+|---|---|
+| [Department / Lab] · OSU Corvallis | [Shared genomics core, co-PI on grant, visiting student arrangements, joint modeling work.] Contact: [Name] |
+| OSU Center for Genomics & Biocomputing | Access to Illumina sequencing, library prep, and bioinformatics support. Contact the PI before planning a sequencing run to discuss project design and cost-sharing. [cgrb.oregonstate.edu](https://cgrb.oregonstate.edu) |
+| [Collaborator Lab] · OSU Corvallis | [CEOAS, Zoology, Microbiology — add as applicable.] |
+
+### External & agency collaborations {#external-collabs}
+
+| Partner | Nature of collaboration |
+|---|---|
+| NOAA Fisheries · NWFSC | [Ocean acidification monitoring, shared cruise time, co-authorship on stock assessments, agency-funded research agreements.] |
+| Oregon Dept. of Fish & Wildlife | [Oyster hatchery monitoring, shellfish disease surveillance, joint permit applications for research collection.] |
+| [Industry / Hatchery Partner] | [Aquaculture partnerships — larvae supply, growers hosting mesocosm experiments, industry-co-funded research.] |
+| [External Institution] | [International, national lab, or other university collaborations — joint publications, exchange visits, shared datasets.] |

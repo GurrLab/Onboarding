@@ -1,32 +1,176 @@
-p.caption {
-  color: #777;
-  margin-top: 10px;
-}
-p code {
-  white-space: inherit;
-}
-pre {
-  word-break: normal;
-  word-wrap: normal;
-}
-pre code {
-  white-space: inherit;
-}
-.title {
-  color: #0066cc;                /* Change color (Hex or Name) */
-  font-family: "Roboto", serif;  /* Change font type */
-  font-size: 60px;               /* Change size */
-}
-/* Change the default font for the entire body of the book */
+/* ── GurrLab Onboarding · bookdown gitbook theme ── */
+
+/* Base typography */
 .book .book-body .page-wrapper .page-inner section.normal {
-  font-family: "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  color: #1A1A1A;
+  line-height: 1.7;
+  max-width: 820px;
 }
-/* Change the color for all links */
-a {
-  color: #0066cc;
+
+/* Headings */
+.book .book-body .page-wrapper .page-inner section.normal h1,
+.book .book-body .page-wrapper .page-inner section.normal h2 {
+  color: #3a7d44;
+  border-bottom: 2px solid #D4DDD5;
+  padding-bottom: 0.3em;
+  margin-top: 2em;
 }
-.hidden-header {
-  display: none;
+.book .book-body .page-wrapper .page-inner section.normal h3 {
+  color: #2e6235;
+  margin-top: 1.5em;
+}
+.book .book-body .page-wrapper .page-inner section.normal h4 {
+  color: #5A6A5C;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Links */
+a { color: #0076BC; }
+a:hover { color: #3a7d44; text-decoration: underline; }
+
+/* Cover title */
+.title {
+  color: #3a7d44;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+/* Sidebar / TOC */
+.book .book-summary {
+  background: #1A1A1A;
+}
+.book .book-summary ul.summary li a,
+.book .book-summary ul.summary li span {
+  color: rgba(255,255,255,0.75);
+  font-size: 14px;
+}
+.book .book-summary ul.summary li.active > a {
+  color: #fff;
+  border-left: 3px solid #D73F09;
+  padding-left: 12px;
+  background: rgba(255,255,255,0.06);
+}
+.book .book-summary ul.summary li a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+.toc-logo { padding: 10px 15px 5px; }
+.toc-logo img { display: block; filter: brightness(0) invert(1); }
+
+/* Toolbar */
+.book .book-header {
+  background: #3a7d44;
+  color: #fff;
+}
+.book .book-header .btn { color: rgba(255,255,255,0.8); }
+.book .book-header .btn:hover { color: #fff; }
+
+/* Code blocks */
+pre {
+  background: #EAF0EB;
+  border: 1px solid #D4DDD5;
+  border-radius: 4px;
+  font-size: 14px;
+}
+code {
+  background: #EAF0EB;
+  color: #2e6235;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+}
+pre code { background: transparent; color: inherit; padding: 0; }
+
+/* Callout boxes */
+.callout-tip, .callout-warn, .callout-info {
+  border-left: 4px solid;
+  padding: 0.85rem 1rem;
+  margin: 1.25rem 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.93em;
+  line-height: 1.65;
+}
+.callout-tip  { border-color: #3a7d44; background: #EBF0EB; }
+.callout-warn { border-color: #D97706; background: #FEF3C7; }
+.callout-info { border-color: #0076BC; background: #EBF4FB; }
+
+/* Role badges */
+.role-badge {
+  display: inline-block;
+  font-size: 0.72em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 0 3px 3px 0;
+  vertical-align: middle;
+}
+.badge-volunteer { background: #F3F4F6; color: #4B5563; }
+.badge-undergrad { background: #DBEAFE; color: #1E40AF; }
+.badge-graduate  { background: #D1FAE5; color: #065F46; }
+.badge-postdoc   { background: #EDE9FE; color: #6D28D9; }
+.badge-fra       { background: #FEF3C7; color: #92400E; }
+
+/* Download card */
+.download-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid #D4DDD5;
+  border-radius: 5px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  background: #fff;
+}
+.download-card-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; }
+.download-card-body { flex: 1; }
+.download-card-title { font-weight: 700; margin-bottom: 0.3rem; }
+.download-card-desc  { font-size: 0.88em; color: #5A6A5C; line-height: 1.6; margin-bottom: 0.6rem; }
+.download-btn {
+  display: inline-block;
+  font-size: 0.82em;
+  font-weight: 600;
+  color: #fff !important;
+  background: #3a7d44;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  text-decoration: none !important;
+}
+.download-btn-blue { background: #0076BC; }
+.download-btn:hover { opacity: 0.88; }
+
+/* Two-column grid (expectations, critique cards) */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.two-col-card {
+  border: 1px solid #D4DDD5;
+  border-radius: 5px;
+  padding: 1rem;
+  background: #F5F7F5;
+}
+.two-col-card h4 { margin-top: 0; }
+
+/* OSU orange accent for section rules */
+hr.section-rule {
+  border: none;
+  border-top: 2px solid #D73F09;
+  margin: 2.5rem 0;
+}
+
+/* Caption */
+p.caption { color: #777; margin-top: 10px; }
+
+@media (max-width: 640px) {
+  .two-col { grid-template-columns: 1fr; }
+  .download-card { flex-direction: column; }
 }

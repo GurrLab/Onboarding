@@ -1,0 +1,292 @@
+# Computing {#computing}
+
+The lab's computing stack is built around reproducibility and openness. Everything we produce — code, data, analyses — lives in version control from day one.
+
+---
+
+## Why it matters {#why-computing}
+
+### Open & transparent science {#open-science}
+
+We pre-register study designs, share code and data publicly, and archive null results alongside positive ones. This isn't overhead — it's how we make our science trustworthy and durable.
+
+- **Pre-registration:** Register your study design on [OSF](https://osf.io) *before* data collection. This protects against unconscious p-hacking and signals scientific integrity to reviewers.
+- **Public code:** All analysis code is published in the lab GitHub org at or before paper submission. Comment your code as if someone else will run it — because they will.
+- **Data archiving:** Raw data are archived in a domain repository (e.g., NCBI, BCO-DMO, OSF) at publication. Never publish a paper without a data availability statement that works.
+- **Null results:** Experiments that don't go as planned are still science. Document and report them internally at minimum; consider a registered report or null result publication.
+
+### Lab computing stack {#stack}
+
+| Tool | Purpose |
+|---|---|
+| **Bash / Linux** | Navigation, file management, scripting, HPC job submission |
+| **Git & GitHub** | Version control for all code and documentation |
+| **R & RStudio** | Statistical analysis, visualization, bioinformatics |
+| **HPC cluster** | Large-scale computation — genomics, environmental modeling |
+| **Discord** | Lab communication; `#computing-help` for technical questions |
+| **OSF** | Pre-registration, data archiving, supplementary materials |
+
+---
+
+## Linux & Bash {#bash}
+
+### Introduction {#bash-intro}
+
+The command line gives you direct, scriptable control over your files, data, and compute jobs. Everything you do on the HPC will be in Bash. Even locally, it is faster and more reproducible than point-and-click.
+
+Open a terminal:
+
+- **macOS:** Applications → Utilities → Terminal (or install [iTerm2](https://iterm2.com))
+- **Windows:** Install [Git Bash](https://git-scm.com/downloads) or use WSL
+- **Linux:** Already have one
+
+### Navigating directories {#bash-navigate}
+
+```bash
+pwd           # print working directory — where am I?
+ls            # list files in current directory
+ls -lh        # list with details and human-readable sizes
+ls -a         # include hidden files (dotfiles)
+cd Documents  # change into the Documents folder
+cd ..         # go up one level
+cd ~          # go to your home directory
+cd -          # go back to the previous directory
+```
+
+### Reading & editing files {#bash-files}
+
+```bash
+cat file.txt          # print entire file
+head -20 file.txt     # first 20 lines
+tail -20 file.txt     # last 20 lines
+less file.txt         # scroll through (q to quit)
+
+nano file.txt         # simple editor — good for quick edits
+vim file.txt          # powerful editor — press i to insert, Esc then :wq to save and quit
+```
+
+### Moving & copying files {#bash-move}
+
+```bash
+cp file.txt backup.txt          # copy file
+cp -r folder/ folder_backup/    # copy a whole directory
+mv file.txt new_name.txt        # rename
+mv file.txt ../other_folder/    # move to another folder
+```
+
+### Deleting files {#bash-delete}
+
+```bash
+rm file.txt           # delete a file (no recycle bin — permanent)
+rm -r folder/         # delete a folder and all its contents
+```
+
+<div class="callout-warn">
+`rm` is permanent. There is no undo, no recycle bin. Double-check before you run it, especially with wildcards. `rm -rf /` or `rm -rf *` can wipe your entire system.
+</div>
+
+### Wildcards {#bash-wildcards}
+
+```bash
+ls *.csv              # list all .csv files
+cp data_*.txt backup/ # copy all files matching the pattern
+rm temp_*.log         # delete all matching log files
+```
+
+### Practice exercise {#bash-practice}
+
+```bash
+mkdir bash_practice
+cd bash_practice
+echo "Hello GurrLab" > hello.txt
+cat hello.txt
+cp hello.txt hello_copy.txt
+ls -lh
+rm hello_copy.txt
+cd ..
+```
+
+---
+
+## Git & GitHub {#git}
+
+### Overview {#git-overview}
+
+**Git** is a version control system — it tracks changes to files so you can see history, revert mistakes, and collaborate without overwriting each other's work.
+
+**GitHub** is a website that hosts Git repositories. It adds collaboration features: pull requests, issues, project boards, and GitHub Pages.
+
+Think of Git as the engine and GitHub as the garage where you store and share your work.
+
+### Setup & SSH {#git-setup}
+
+```bash
+# Set your identity (do this once)
+git config --global user.name "Your Name"
+git config --global user.email "you@oregonstate.edu"
+git config --global core.editor "nano"  # or vim
+
+# Generate an SSH key so you don't need to type your password
+ssh-keygen -t ed25519 -C "you@oregonstate.edu"
+# Press Enter to accept defaults
+
+# Copy the public key
+cat ~/.ssh/id_ed25519.pub
+# Paste it into GitHub → Settings → SSH and GPG keys → New SSH key
+```
+
+### Clone a repository {#git-clone}
+
+```bash
+# Clone a repo from GitHub to your local machine
+git clone git@github.com:GurrLab/your-repo.git
+cd your-repo
+```
+
+### Daily workflow {#daily-workflow}
+
+```bash
+git pull                        # get latest changes from GitHub
+# ... make your edits ...
+git status                      # see what has changed
+git add analysis.R              # stage a specific file
+git add .                       # stage all changed files
+git commit -m "Add CO2 analysis script"   # commit with a message
+git push                        # push to GitHub
+```
+
+**Commit message tips:**
+
+- Use the imperative mood: *"Add..."*, *"Fix..."*, *"Update..."* not *"Added..."*
+- Be specific: `"Fix salinity calibration in water_chem.R"` not `"fix bug"`
+- Commit small and often — don't wait until the end of the day
+
+### Branches & pull requests {#git-branches}
+
+```bash
+git checkout -b feature/new-analysis   # create and switch to a new branch
+# ... make changes ...
+git add .
+git commit -m "Add new analysis approach"
+git push -u origin feature/new-analysis
+```
+
+Then on GitHub: open a **Pull Request** from your branch into `main`. Request a review from your collaborator. Merge after review.
+
+### Merge conflicts {#git-conflicts}
+
+A merge conflict happens when two people edit the same line in the same file. Git marks the conflict like this:
+
+```
+<<<<<<< HEAD
+result <- model_a(data)
+=======
+result <- model_b(data)
+>>>>>>> feature/new-analysis
+```
+
+Resolve it by editing the file to keep what you want, removing the markers, then:
+
+```bash
+git add conflicted_file.R
+git commit -m "Resolve merge conflict in analysis"
+```
+
+### New repository checklist {#git-new-repo}
+
+When starting any new project:
+
+- [ ] Create the repo in the [GurrLab GitHub org](https://github.com/GurrLab) (not your personal account)
+- [ ] Add a `README.md` describing the project, data sources, and how to run the code
+- [ ] Add a `.gitignore` appropriate for your language (R, Python)
+- [ ] Make the repo **public** unless there is a specific reason not to
+- [ ] Never commit raw data files > 50 MB — use OSF or the lab NAS for large files
+
+---
+
+## R & RStudio {#r}
+
+### Getting started {#r-setup}
+
+Download and install in this order:
+
+1. [R](https://cran.r-project.org) — the language
+2. [RStudio](https://posit.co/download/rstudio-desktop/) — the IDE
+
+Core packages to install immediately:
+
+```r
+install.packages(c(
+  "tidyverse",   # data wrangling and visualization
+  "here",        # reproducible file paths
+  "rmarkdown",   # reproducible reports
+  "devtools"     # installing packages from GitHub
+))
+```
+
+### Reproducible project structure {#r-structure}
+
+Use RStudio Projects (`.Rproj`) for every analysis. Never use `setwd()`.
+
+```
+my_project/
+├── data/
+│   ├── raw/          # never modify these
+│   └── processed/
+├── R/                # scripts and functions
+├── output/
+│   ├── figures/
+│   └── tables/
+├── docs/             # manuscripts, notes
+└── README.md
+```
+
+Use `here::here()` to build file paths:
+
+```r
+library(here)
+data <- read_csv(here("data", "raw", "samples.csv"))
+```
+
+---
+
+## HPC cluster {#hpc}
+
+The OSU HPC (High Performance Computing) cluster is where you run large jobs — genome assembly, environmental modeling, permutation tests with thousands of iterations.
+
+### Getting an account {#hpc-account}
+
+Request an account through [HPC documentation — link TBD]. Copy the PI on your request email.
+
+### Connecting {#hpc-connect}
+
+```bash
+ssh your_onid@submit.hpc.oregonstate.edu
+```
+
+### Submitting a job (SLURM) {#hpc-slurm}
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=my_analysis
+#SBATCH --output=logs/job_%j.out
+#SBATCH --error=logs/job_%j.err
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+#SBATCH --mem=32G
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=you@oregonstate.edu
+
+module load R/4.3.0
+Rscript analysis.R
+```
+
+Submit with `sbatch job.sh`. Monitor with `squeue -u your_onid`.
+
+### Good HPC habits {#hpc-habits}
+
+- Test on a small dataset locally before submitting large jobs
+- Use `--time` conservatively — overestimate to avoid job termination
+- Clean up `/scratch` after jobs complete (scratch is not backed up)
+- Document your software versions with `module list` in your job script output

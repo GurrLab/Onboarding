@@ -1,5 +1,14 @@
-book_filename: "bookdown-demo"
+book_filename: "GurrLab-Onboarding"
 language:
   ui:
-    chapter_name: "" # removes Chapter from the head of each page
+    chapter_name: ""
 delete_merged_file: true
+rmd_files: [
+  "index.Rmd",
+  "01-welcome.Rmd",
+  "02-philosophy.Rmd",
+  "03-conduct.Rmd",
+  "04-computing.Rmd",
+  "05-lab-spaces.Rmd",
+  "06-guide.Rmd"
+]
