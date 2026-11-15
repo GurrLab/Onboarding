@@ -1,16 +1,148 @@
-/* GurrLab brand colors */
+/* ══════════════════════════════════════════════
+   GurrLab · Onboarding Site
+   Color palette:
+     Oyster logo — yellow-green #a0c020, forest #60a040, teal #0080a0
+     OSU          — orange #D73F09, black #1A1A1A
+   ══════════════════════════════════════════════ */
+
+/* ── Brand tokens ── */
 :root {
-  --md-primary-fg-color: #3a7d44;
-  --md-primary-fg-color--light: #69BB5A;
-  --md-primary-fg-color--dark: #2e6235;
-  --md-accent-fg-color: #D73F09;
-  --md-typeset-a-color: #0076BC;
+  --gurr-green:       #60a040;   /* forest green — primary */
+  --gurr-green-dark:  #3d6e28;
+  --gurr-yellow:      #a0c020;   /* yellow-green — oyster highlight */
+  --gurr-teal:        #0080a0;   /* ocean teal — accent */
+  --osu-orange:       #D73F09;   /* OSU orange — required reading, alerts */
+  --osu-black:        #1A1A1A;   /* OSU black — header, footer */
+  --osu-orange-light: #FDF0EB;   /* OSU orange tint — section bg */
 }
 
-/* Logo in sidebar */
-.md-header__button.md-logo img { filter: brightness(0) invert(1); }
+/* ── Material overrides ── */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #60a040;
+  --md-primary-fg-color--light: #80b858;
+  --md-primary-fg-color--dark:  #3d6e28;
+  --md-accent-fg-color:         #0080a0;
+  --md-typeset-a-color:         #0080a0;
+}
 
-/* Role badges */
+/* ── Top header ── */
+.md-header {
+  background: var(--osu-black) !important;
+  box-shadow: 0 2px 0 var(--osu-orange);
+}
+.md-header__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff !important;
+}
+.md-header__button { color: rgba(255,255,255,0.8) !important; }
+.md-header__button:hover { color: #fff !important; }
+
+/* Topbar logo — white version on dark header, sized and clickable */
+.md-header__button.md-logo {
+  padding: 0.3rem 0.5rem;
+}
+.md-header__button.md-logo img {
+  height: 34px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  display: block;
+  transition: opacity 0.15s;
+}
+.md-header__button.md-logo:hover img {
+  opacity: 0.85;
+}
+
+/* Active nav tab — OSU orange underline */
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: #fff !important;
+}
+.md-tabs__link--active::after {
+  background: var(--osu-orange) !important;
+}
+.md-tabs { background: var(--osu-black) !important; }
+
+/* ── Sidebar ── */
+.md-nav__title { color: var(--gurr-green-dark); font-weight: 700; }
+.md-nav__link--active { color: var(--gurr-green) !important; font-weight: 600; }
+.md-nav__link:hover   { color: var(--gurr-teal)  !important; }
+
+/* ── Headings ── */
+.md-typeset h1 {
+  color: var(--osu-black);
+  border-bottom: 3px solid var(--gurr-yellow);
+  padding-bottom: 0.25em;
+}
+.md-typeset h2 {
+  color: var(--gurr-green-dark);
+  border-bottom: 1px solid #d4ddd5;
+  padding-bottom: 0.2em;
+}
+.md-typeset h3 { color: var(--gurr-green); }
+.md-typeset h4 {
+  color: var(--gurr-teal);
+  text-transform: uppercase;
+  font-size: 0.82em;
+  letter-spacing: 0.06em;
+}
+
+/* ── Links ── */
+.md-typeset a             { color: var(--gurr-teal); }
+.md-typeset a:hover       { color: var(--gurr-green); }
+
+/* ── Code ── */
+.md-typeset code {
+  background: #eaf3ea;
+  color: var(--gurr-green-dark);
+  border-radius: 3px;
+}
+.md-typeset pre { border-left: 3px solid var(--gurr-yellow); }
+
+/* ── Admonitions ── */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--gurr-green);
+}
+.md-typeset .admonition.tip > .admonition-title,
+.md-typeset details.tip > summary {
+  background: rgba(96,160,64,0.12);
+  color: var(--gurr-green-dark);
+}
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--gurr-teal);
+}
+.md-typeset .admonition.note > .admonition-title,
+.md-typeset details.note > summary {
+  background: rgba(0,128,160,0.10);
+}
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: var(--osu-orange);
+}
+.md-typeset .admonition.warning > .admonition-title,
+.md-typeset details.warning > summary {
+  background: rgba(215,63,9,0.10);
+}
+.md-typeset .admonition.success,
+.md-typeset details.success {
+  border-color: var(--gurr-yellow);
+}
+.md-typeset .admonition.success > .admonition-title,
+.md-typeset details.success > summary {
+  background: rgba(160,192,32,0.12);
+}
+
+/* ── Tables ── */
+.md-typeset table:not([class]) th {
+  background: var(--gurr-green);
+  color: #fff;
+}
+.md-typeset table:not([class]) tr:hover { background: rgba(96,160,64,0.06); }
+
+/* ── Role badges ── */
 .badge {
   display: inline-block;
   font-size: 0.72em;
@@ -23,41 +155,196 @@
   vertical-align: middle;
 }
 .badge-volunteer { background: #F3F4F6; color: #4B5563; }
-.badge-undergrad { background: #DBEAFE; color: #1E40AF; }
-.badge-graduate  { background: #D1FAE5; color: #065F46; }
-.badge-postdoc   { background: #EDE9FE; color: #6D28D9; }
+.badge-undergrad { background: #e8f4ea; color: #2a6e30; }
+.badge-graduate  { background: #d1fae5; color: #065F46; }
+.badge-postdoc   { background: #e0f0f8; color: #005f80; }
 .badge-fra       { background: #FEF3C7; color: #92400E; }
 
-/* Download card */
+/* ── Download cards ── */
 .download-card {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  border: 1px solid #D4DDD5;
-  border-left: 4px solid #3a7d44;
+  border: 1px solid #d4ddd5;
+  border-left: 4px solid var(--gurr-green);
   border-radius: 5px;
   padding: 1rem 1.25rem;
   margin: 1rem 0;
-  background: var(--md-code-bg-color);
+  background: #f7faf7;
 }
-.download-card-blue { border-left-color: #0076BC; }
+.download-card-blue { border-left-color: var(--gurr-teal); background: #f4f9fb; }
 .download-card-icon { font-size: 2rem; flex-shrink: 0; line-height: 1.2; }
 .download-card-body { flex: 1; }
-.download-card-title { font-weight: 700; margin: 0 0 0.3rem; }
-.download-card-desc { font-size: 0.88em; opacity: 0.8; margin-bottom: 0.6rem; }
+.download-card-title { font-weight: 700; margin: 0 0 0.3rem; color: var(--osu-black); }
+.download-card-desc  { font-size: 0.88em; color: #4a5a4c; line-height: 1.6; margin-bottom: 0.6rem; }
 .download-btn {
   display: inline-block;
   font-size: 0.82em;
   font-weight: 600;
   color: #fff !important;
-  background: #3a7d44;
+  background: var(--gurr-green);
   border-radius: 4px;
   padding: 0.4rem 1rem;
   text-decoration: none !important;
+  transition: background 0.15s;
 }
-.download-btn-blue { background: #0076BC; }
+.download-btn:hover  { background: var(--gurr-green-dark) !important; }
+.download-btn-blue   { background: var(--gurr-teal); }
+.download-btn-blue:hover { background: #005f7a !important; }
 
-/* Two-col critique grid */
+/* ── Two-col critique grid ── */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
 @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
-.two-col-card { border: 1px solid var(--md-default-fg-color--lightest); border-radius: 5px; padding: 1rem; }
+.two-col-card {
+  border: 1px solid #d4ddd5;
+  border-radius: 5px;
+  padding: 1rem;
+  background: #f7faf7;
+}
+
+/* ══════════════════════════════════════════════
+   OSU RESOURCES FOOTER BLOCK
+   Applied via the .osu-resources class on a div
+   ══════════════════════════════════════════════ */
+.osu-resources {
+  margin-top: 3rem;
+  border-top: 3px solid var(--osu-orange);
+  padding-top: 1.25rem;
+}
+.osu-resources-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+.osu-resources-header-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--osu-orange);
+}
+.osu-resources-header-rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--osu-orange), transparent);
+}
+.osu-resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.6rem;
+}
+.osu-resource-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--osu-black) !important;
+  background: var(--osu-orange-light);
+  border: 1px solid rgba(215,63,9,0.2);
+  border-radius: 4px;
+  padding: 0.4rem 0.75rem;
+  text-decoration: none !important;
+  transition: background 0.15s, border-color 0.15s;
+  line-height: 1.35;
+}
+.osu-resource-chip:hover {
+  background: rgba(215,63,9,0.14) !important;
+  border-color: var(--osu-orange);
+  color: var(--osu-black) !important;
+}
+.osu-resource-chip-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.osu-resource-chip-text {}
+.osu-resource-chip-label {
+  font-weight: 600;
+  display: block;
+  color: var(--osu-black);
+}
+.osu-resource-chip-sub {
+  font-size: 0.72rem;
+  color: #6b4a3a;
+  display: block;
+}
+
+/* ── Footer ── */
+.md-footer { background: var(--osu-black); }
+.md-footer-meta { background: #111; }
+
+/* ══════════════════════════════════════════════
+   OYSTER LOGO FLAIR
+   ══════════════════════════════════════════════ */
+
+/* Oyster bullet points — applied with class .oyster-list */
+.oyster-list {
+  list-style: none;
+  padding-left: 0.25rem;
+}
+.oyster-list li {
+  padding-left: 1.75rem;
+  position: relative;
+  margin-bottom: 0.4rem;
+}
+.oyster-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAFYUlEQVR4nH2UaWxUVRTHz33vvjdbZ+u0Qwu0ZSmLArJMjYrYMlBBdjBObUo0rZFWosYPQmIkMh1iBENUWsBSISIEIs4YkEWsbFMIlAJtLVCWgKVQukzb6bSzz9vu9YMZgiZ6Pp1zkv8v/3NOchA8FZQCgxAQz2/Tp5hM/CpKyHhGIQhR6sNAgjyQyTyCuWpMs1kMncGIsvGFeXf3NdXauLyKZgkAACVhtbU2rqKiWXJ784r1arbWoGcMGAhwiIIaA2AggCmB4KAEVFR61SlMpkhAjgl07uz8W5eammxcXl6zhCgFVF9fwNrt5+Uf6/KysJa9azBgbWRYPKpFSg2HkAYjJUeFaApmqI+K0KLHwp9DCv7VauVf8fnlDknmSuz2lkZKAT1xuN/70lSE0M60NJw/7Bc7JCE27e2FN6LwH3Hx4syRBMhPehM3ZzhKIRKHLU3e5g1oh7cgAzP0G60KFRtSGIgFhduCCKvL7A2tVSdfUwEAfLS4Tti7d7rJlGMtMXEJSzhB9i1/9VKn01mA5xSG35EQ2pxi5lP9fqkaVXvz61Ot6oKwP9GqYui2O4Pmw1tXHgs/7Wb74ZUTdXr+pIbGxmdrBgAr8btsaMBmW1aeQMhFDtXbFmu13LFEnABWKMofGpIUmaCytQUXWpOXWr1/q46iAXOGKjFH4MPf8SAzXQPaiZNGtS8yp2mremHkeIRcNyl1sAfOdbeHEpSllBEYGVAH8JgRKWepbbJxL+/euWzu/l3XAwS6FKprF4A7GJHVl/yDwosbV/9wv0MY3fZQyITuqHE0AABCHiXOMLPUZjUVKHuVkSg6zabwKCbD/Iq8Zikkqz8LxFUZIIuvS5jLl9mUzMqVNYs2FLvbAABu8OKFO73q9h7F+kltbTkHFJAAsERkWCQxzD4sUFQdCEhljI5/1+tN/6KoJb2Gqtg919tKG2A7EpJ7dJ+w20S9dYYyKPxyK2FawZtMbaEU8TlA0Kx48bz+ATkhU+Yo4yo8dzsWp+t1aar0M9j2s//j5XuDoq5JPbbuMAKAY6cLs1uv2LZlGcNNcYF5v0OxHGyXxuQ+GNTGq89X3dhyqqDMlKXLlAjsXmc/70du6mCLkEdZf3ZhpTHL4Az3RQ7tOba/XMpq6EIKs+LsrE8rGb3ByEf7d5W2fHA11zS461EiXacomq+LntnWQI1j7igxsZmN0oLIgtlxpgh5FDd1sFvn/17pe5hYh9JGFa9ZUvIWB8ImguMlKkYYuNeNv5z6yv1aXoPtf4Ryw3cjYx6WTqs6EtaOqY8J9F7PoLxk/cLTUah0AQMAUIQ8xOl14h0Ljn/V/UCu642O3JxrfNDBsjL1E81tVitrGQRwMzyOfSRYlaFolrsfGTcJwKX6fFJh9YpzfQ63g3W5gDDJR3PiXi9yOoEJi4YjMTbVoNcMy6PUfeQySZVPxHPf/PDM0lMaPhTGrDick37d74uNKPP1cVtqVp16XN5k4zxFHgUAIAmEceZC4nIBicuavohooABswKIaSvQTLT772I4TsipjRsa1yQZVsHuC5Y5lIGblgtzIGkoBZR5fqiQ5OJl4HA4CADAsGRoZmUNEllON/JCPEF5rVui1GTjgZ9W6vB5d71WJcJMCcctl78rPe4vcDtbjcj0BPnEICFGH281eKdnQF4rx3wcS5vdy9F2NEZljS3MPD01QojrESPfH6rv6wwnDzKBs/PZvoeMfXwgB/Kt2OtGzMAWLo4YPUID250c09mTpO3mdWo50BjNQW9/01CjR5bxRNrjWVQkALhf5P2CyRwEAsmv2rhGoLseoChrUGoWPxFQBItOYBUnbm8vLQ8nJnhb/BYdKlo9QztjxAAAAAElFTkSuQmCC');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Oyster bullet — inline utility class for any <ul> */
+.md-typeset ul.oyster-bullets {
+  list-style: none;
+  padding-left: 0.25rem;
+}
+.md-typeset ul.oyster-bullets li {
+  padding-left: 1.9rem;
+  position: relative;
+  margin-bottom: 0.45rem;
+}
+.md-typeset ul.oyster-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAFYUlEQVR4nH2UaWxUVRTHz33vvjdbZ+u0Qwu0ZSmLArJMjYrYMlBBdjBObUo0rZFWosYPQmIkMh1iBENUWsBSISIEIs4YkEWsbFMIlAJtLVCWgKVQukzb6bSzz9vu9YMZgiZ6Pp1zkv8v/3NOchA8FZQCgxAQz2/Tp5hM/CpKyHhGIQhR6sNAgjyQyTyCuWpMs1kMncGIsvGFeXf3NdXauLyKZgkAACVhtbU2rqKiWXJ784r1arbWoGcMGAhwiIIaA2AggCmB4KAEVFR61SlMpkhAjgl07uz8W5eammxcXl6zhCgFVF9fwNrt5+Uf6/KysJa9azBgbWRYPKpFSg2HkAYjJUeFaApmqI+K0KLHwp9DCv7VauVf8fnlDknmSuz2lkZKAT1xuN/70lSE0M60NJw/7Bc7JCE27e2FN6LwH3Hx4syRBMhPehM3ZzhKIRKHLU3e5g1oh7cgAzP0G60KFRtSGIgFhduCCKvL7A2tVSdfUwEAfLS4Tti7d7rJlGMtMXEJSzhB9i1/9VKn01mA5xSG35EQ2pxi5lP9fqkaVXvz61Ot6oKwP9GqYui2O4Pmw1tXHgs/7Wb74ZUTdXr+pIbGxmdrBgAr8btsaMBmW1aeQMhFDtXbFmu13LFEnABWKMofGpIUmaCytQUXWpOXWr1/q46iAXOGKjFH4MPf8SAzXQPaiZNGtS8yp2mremHkeIRcNyl1sAfOdbeHEpSllBEYGVAH8JgRKWepbbJxL+/euWzu/l3XAwS6FKprF4A7GJHVl/yDwosbV/9wv0MY3fZQyITuqHE0AABCHiXOMLPUZjUVKHuVkSg6zabwKCbD/Iq8Zikkqz8LxFUZIIuvS5jLl9mUzMqVNYs2FLvbAABu8OKFO73q9h7F+kltbTkHFJAAsERkWCQxzD4sUFQdCEhljI5/1+tN/6KoJb2Gqtg919tKG2A7EpJ7dJ+w20S9dYYyKPxyK2FawZtMbaEU8TlA0Kx48bz+ATkhU+Yo4yo8dzsWp+t1aar0M9j2s//j5XuDoq5JPbbuMAKAY6cLs1uv2LZlGcNNcYF5v0OxHGyXxuQ+GNTGq89X3dhyqqDMlKXLlAjsXmc/70du6mCLkEdZf3ZhpTHL4Az3RQ7tOba/XMpq6EIKs+LsrE8rGb3ByEf7d5W2fHA11zS461EiXacomq+LntnWQI1j7igxsZmN0oLIgtlxpgh5FDd1sFvn/17pe5hYh9JGFa9ZUvIWB8ImguMlKkYYuNeNv5z6yv1aXoPtf4Ryw3cjYx6WTqs6EtaOqY8J9F7PoLxk/cLTUah0AQMAUIQ8xOl14h0Ljn/V/UCu642O3JxrfNDBsjL1E81tVitrGQRwMzyOfSRYlaFolrsfGTcJwKX6fFJh9YpzfQ63g3W5gDDJR3PiXi9yOoEJi4YjMTbVoNcMy6PUfeQySZVPxHPf/PDM0lMaPhTGrDick37d74uNKPP1cVtqVp16XN5k4zxFHgUAIAmEceZC4nIBicuavohooABswKIaSvQTLT772I4TsipjRsa1yQZVsHuC5Y5lIGblgtzIGkoBZR5fqiQ5OJl4HA4CADAsGRoZmUNEllON/JCPEF5rVui1GTjgZ9W6vB5d71WJcJMCcctl78rPe4vcDtbjcj0BPnEICFGH281eKdnQF4rx3wcS5vdy9F2NEZljS3MPD01QojrESPfH6rv6wwnDzKBs/PZvoeMfXwgB/Kt2OtGzMAWLo4YPUID250c09mTpO3mdWo50BjNQW9/01CjR5bxRNrjWVQkALhf5P2CyRwEAsmv2rhGoLseoChrUGoWPxFQBItOYBUnbm8vLQ8nJnhb/BYdKlo9QztjxAAAAAElFTkSuQmCC');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Sidebar nav — oyster icon on active item */
+.md-nav__item--active > .md-nav__link::before,
+.md-nav__link--active::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADyElEQVR4nD1Te0xbZRz9fd999ElXoIIUkwU6cYMFSMpTF6EwumEEY5CGwJ8ucyEmG8mMUbN0nbqYmZgxhlGmUbe5mTZRg7OKY2DRdY6AohOiDLMMVl6lpfT29t7b+/j8Q9n5+5yTc3JyEPwH5Ced2IMC6vCPzm49izxY02xI1aI0UVM6RJzZJrSHaCqXSGnH65r+GvL7S1mPZy6DvF7A9jYn9VLVtHz1evUJewF7iouLSUZT1xkg+SxF9CyQCFbVG4iGdkZP2zYTSl3D/rlJvx8o9H8C+HS0xmXLZcektLIoZmRnj2t6IxyuM9TXb2gILUgAAKFQeZPZhIcFFRkTAjn2bOPMOXR+vGGXjoIzVgt6nohKhONI14st4Z/7gy/rjj4zIPVfOmgpcyjdqsDPHWi+NfF1sLTUlG14x2hl21bX5PNoINR4l6XBQankaHQpfvm1njub26kGv+p4ktFTwQJ9fC0PrRUBUWtqXXMzAACBidqwwUTV05ildiV55cYr+0MD4PdTrReXO1gQHQV0fE+SSXQb5NTHba2jveOjVTzCUEMI/IERaJyMVUkACSd5dVahmQoMAOUbydOcZhwkGuyVEZNIZnTuY+1XegEAFgT72N98YRtCoA3ebMnT9HQ1J6Nr6M2x5p6sR82XdbF/3H0338/N0kVPRfs6SrZrfB48uC+l6I0ZBaYjSv7ivdTju/cVXXVkPZI7nowJzQgA4PUx9xXWzHY9Jk8VHfrpi49YNh2U3F2f/SqWvccn5YaJxN7IomC7FpWtbfS9Ele9+8OwmiF0CtQq7CVefNr1Q09axl/Oo5op987r3oyqe/rb1Yo3CIF8hyXSMBar+O73lKN3Mlr+VuWBc2+LtO6JlILbfa6Qin3gI3DSi848NfxCjLc+KM6e76OZ9K0w59Dp+eVLhVUri3fFgt23YxXfd1ReyEtpO46vr6p1vpbRxU5/J8aAgDjtKxQQQOtblv6YlFNbZL6/+YCw/EW5ovXwSNe76xnLMsuIf6qAe6NJ08mzz43MHp5yMgFPQMUAAMXZmxogIJKWFYkLOYqVTmwAK9LBpWaDouHqStuMyZFzR17l7YYlwT7k9QIeck4pAAAYACDgCWhACEolrb/ERZtEU1hPU5lNp27ptya0Ou6w3E9b9ZxtmbNPj3ScXZkr8yNAiDw0AAACAQ8OH3qVS2eMJ6JCTvuWtGOtpHBSThvSW4iV5gXZUMxnzB8AARSYnSXbMz88EwAAeL0YfD5t54VPGjUFN2Yb4waGVSmOM4uaBrcXjhz5ZpuzLfkXN7LKtSlAVdMAAAAASUVORK5CYII=');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  flex-shrink: 0;
+}
+
+/* Sidebar section labels — subtle oyster accent line */
+.md-nav__title {
+  border-left: 3px solid transparent;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADyElEQVR4nD1Te0xbZRz9fd999ElXoIIUkwU6cYMFSMpTF6EwumEEY5CGwJ8ucyEmG8mMUbN0nbqYmZgxhlGmUbe5mTZRg7OKY2DRdY6AohOiDLMMVl6lpfT29t7b+/j8Q9n5+5yTc3JyEPwH5Ced2IMC6vCPzm49izxY02xI1aI0UVM6RJzZJrSHaCqXSGnH65r+GvL7S1mPZy6DvF7A9jYn9VLVtHz1evUJewF7iouLSUZT1xkg+SxF9CyQCFbVG4iGdkZP2zYTSl3D/rlJvx8o9H8C+HS0xmXLZcektLIoZmRnj2t6IxyuM9TXb2gILUgAAKFQeZPZhIcFFRkTAjn2bOPMOXR+vGGXjoIzVgt6nohKhONI14st4Z/7gy/rjj4zIPVfOmgpcyjdqsDPHWi+NfF1sLTUlG14x2hl21bX5PNoINR4l6XBQankaHQpfvm1njub26kGv+p4ktFTwQJ9fC0PrRUBUWtqXXMzAACBidqwwUTV05ildiV55cYr+0MD4PdTrReXO1gQHQV0fE+SSXQb5NTHba2jveOjVTzCUEMI/IERaJyMVUkACSd5dVahmQoMAOUbydOcZhwkGuyVEZNIZnTuY+1XegEAFgT72N98YRtCoA3ebMnT9HQ1J6Nr6M2x5p6sR82XdbF/3H0338/N0kVPRfs6SrZrfB48uC+l6I0ZBaYjSv7ivdTju/cVXXVkPZI7nowJzQgA4PUx9xXWzHY9Jk8VHfrpi49YNh2U3F2f/SqWvccn5YaJxN7IomC7FpWtbfS9Ele9+8OwmiF0CtQq7CVefNr1Q09axl/Oo5op987r3oyqe/rb1Yo3CIF8hyXSMBar+O73lKN3Mlr+VuWBc2+LtO6JlILbfa6Qin3gI3DSi848NfxCjLc+KM6e76OZ9K0w59Dp+eVLhVUri3fFgt23YxXfd1ReyEtpO46vr6p1vpbRxU5/J8aAgDjtKxQQQOtblv6YlFNbZL6/+YCw/EW5ovXwSNe76xnLMsuIf6qAe6NJ08mzz43MHp5yMgFPQMUAAMXZmxogIJKWFYkLOYqVTmwAK9LBpWaDouHqStuMyZFzR17l7YYlwT7k9QIeck4pAAAYACDgCWhACEolrb/ERZtEU1hPU5lNp27ptya0Ou6w3E9b9ZxtmbNPj3ScXZkr8yNAiDw0AAACAQ8OH3qVS2eMJ6JCTvuWtGOtpHBSThvSW4iV5gXZUMxnzB8AARSYnSXbMz88EwAAeL0YfD5t54VPGjUFN2Yb4waGVSmOM4uaBrcXjhz5ZpuzLfkXN7LKtSlAVdMAAAAASUVORK5CYII=');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 14px 14px;
+  padding-left: 1.4rem !important;
+}
