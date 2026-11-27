@@ -52,7 +52,6 @@
 .md-tabs { background: var(--osu-black) !important; }
 
 /* ── Sidebar ── */
-.md-nav__title { color: var(--gurr-green-dark); font-weight: 700; }
 .md-nav__link--active { color: var(--gurr-green) !important; font-weight: 600; }
 .md-nav__link:hover   { color: var(--gurr-teal)  !important; }
 
@@ -280,32 +279,68 @@
   opacity: 0.82;
 }
 
-/* (2) Sidebar — G symbol on active item only, no duplication */
-/* Use only the more specific selector to avoid double firing */
+/* (2) Sidebar — G symbol on active items across all nav levels */
+
+/* Active page link */
 .md-nav__link--active::before {
   content: '';
   display: inline-block;
-  width: 11px;
-  height: 20px;
+  width: 10px;
+  height: 18px;
   background-image: url('../assets/logo-g.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  margin-right: 0.45rem;
+  margin-right: 0.4rem;
   vertical-align: middle;
   position: relative;
   top: -1px;
   flex-shrink: 0;
 }
 
-/* Ensure parent item doesn't also add a ::before when child is active */
-.md-nav__item--active > .md-nav__link::before {
+/* Nested section items that are active (expanded parent) */
+.md-nav__item--active > .md-nav__link:not(.md-nav__link--active)::before {
   display: none;
 }
 
-/* Sidebar section labels — no background image to avoid overlap with ::before */
+/* TOC sub-items in secondary nav — indent with consistent left padding */
+.md-nav--secondary .md-nav__link {
+  padding-left: 0.6rem;
+}
+.md-nav--secondary .md-nav__item .md-nav__item .md-nav__link {
+  padding-left: 1.2rem;
+}
+
+/* Sidebar section title labels */
 .md-nav__title {
   padding-left: 0.6rem !important;
+  color: var(--gurr-green-dark);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Consistent indentation for nested nav items */
+.md-nav--primary .md-nav__item--nested > .md-nav .md-nav__link {
+  padding-left: 0.8rem;
+}
+
+/* Active nested link gets G symbol too */
+.md-nav--primary .md-nav__item--nested .md-nav__link--active::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 18px;
+  background-image: url('../assets/logo-g.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  flex-shrink: 0;
 }
 
 /* Oyster bullet points on norms/all-roles lists */
