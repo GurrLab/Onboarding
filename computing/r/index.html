@@ -1264,6 +1264,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reproducible-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducible reporting
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1744,6 +1755,7 @@
 
 
 <h1 id="r-rstudio">R &amp; RStudio<a class="headerlink" href="#r-rstudio" title="Permanent link">&para;</a></h1>
+<p>R is the lab's primary language for statistical analysis, data visualization, and bioinformatics.</p>
 <h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>Download and install in this order:</p>
 <ol>
@@ -1774,6 +1786,11 @@
 <p>Use <code>here::here()</code> for file paths:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">library</span><span class="p">(</span><span class="n">here</span><span class="p">)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="nf">here</span><span class="p">(</span><span class="s">"data"</span><span class="p">,</span><span class="w"> </span><span class="s">"raw"</span><span class="p">,</span><span class="w"> </span><span class="s">"samples.csv"</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="reproducible-reporting">Reproducible reporting<a class="headerlink" href="#reproducible-reporting" title="Permanent link">&para;</a></h2>
+<p>For analyses that need to be shared or published, use <strong>R Markdown</strong> (<code>.Rmd</code>) or <strong>Quarto</strong> (<code>.qmd</code>) to combine code, output, and narrative in a single document. These knit to HTML, PDF, or Word and make methods fully reproducible. All lab manuscripts and reports should be drafted this way where possible.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">install.packages</span><span class="p">(</span><span class="s">"rmarkdown"</span><span class="p">)</span><span class="w">  </span><span class="c1"># R Markdown</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">install.packages</span><span class="p">(</span><span class="s">"quarto"</span><span class="p">)</span><span class="w">     </span><span class="c1"># Quarto</span>
 </code></pre></div>
 
 

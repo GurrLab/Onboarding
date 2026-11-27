@@ -1314,6 +1314,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#osu-cqls-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSU CQLS documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1768,10 +1779,14 @@
 <h1 id="hpc-cluster">HPC Cluster<a class="headerlink" href="#hpc-cluster" title="Permanent link">&para;</a></h1>
 <p>The OSU HPC cluster is where you run large jobs: genome assembly, environmental modeling, permutation tests with thousands of iterations.</p>
 <h2 id="getting-an-account">Getting an account<a class="headerlink" href="#getting-an-account" title="Permanent link">&para;</a></h2>
-<p>Request an account through [HPC documentation, link TBD]. Copy me on your request email.</p>
+<p>Request an account through the <a href="https://cqls.oregonstate.edu/">CQLS HPC portal</a>. Copy me on your request email.</p>
 <h2 id="connecting">Connecting<a class="headerlink" href="#connecting" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>your_onid@submit.hpc.oregonstate.edu
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Off-campus access</p>
+<p>If you are connecting from off campus, you will need to be on the OSU VPN first. Download the VPN client through <a href="https://oregonstate.teamdynamix.com/TDClient/1935/Portal/KB/ArticleDet?ID=76790">OSU IT</a>. Without it, the connection will time out with no useful error message.</p>
+</div>
 <h2 id="submitting-a-job-slurm">Submitting a job (SLURM)<a class="headerlink" href="#submitting-a-job-slurm" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">#SBATCH --job-name=my_analysis</span>
@@ -1795,17 +1810,24 @@
 <li>Clean up <code>/scratch</code> after jobs complete (scratch is not backed up)</li>
 <li>Document your software versions with <code>module list</code> in your job output</li>
 </ul>
+<h2 id="osu-cqls-documentation">OSU CQLS documentation<a class="headerlink" href="#osu-cqls-documentation" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Required reading for HPC users</p>
+<p>If you use the OSU HPC cluster, you are expected to read and follow the official documentation maintained by the Center for Quantitative Life Sciences (CQLS). This covers cluster policies, storage quotas, software modules, job scheduling etiquette, and responsible use. Ignoring these guidelines can result in jobs being killed, accounts being suspended, or degraded performance for other users across the system.</p>
+<p><strong><a href="https://cqls.oregonstate.edu/">Center for Quantitative Life Sciences — cqls.oregonstate.edu</a></strong></p>
+<p>When in doubt about whether a workflow is appropriate for the cluster, check the documentation first or ask me before submitting.</p>
+</div>
 <div class="osu-resources">
 <div class="osu-resources-header">
   <span class="osu-resources-header-label">OSU Resources</span>
   <span class="osu-resources-header-rule"></span>
 </div>
 <div class="osu-resources-grid">
-  <a href="https://hpc.oregonstate.edu" class="osu-resource-chip" target="_blank">
+  <a href="https://cqls.oregonstate.edu/" class="osu-resource-chip" target="_blank">
     <span class="osu-resource-chip-icon">💻</span>
     <span class="osu-resource-chip-text">
-      <span class="osu-resource-chip-label">OSU HPC Documentation</span>
-      <span class="osu-resource-chip-sub">Cluster access & user guide</span>
+      <span class="osu-resource-chip-label">Center for Quantitative Life Sciences</span>
+      <span class="osu-resource-chip-sub">CQLS — HPC policies & best practices</span>
     </span>
   </a>
   <a href="https://cgrb.oregonstate.edu" class="osu-resource-chip" target="_blank">

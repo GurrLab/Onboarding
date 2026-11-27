@@ -280,8 +280,8 @@
   opacity: 0.82;
 }
 
-/* (2) Sidebar — G symbol on active item, file-based */
-.md-nav__item--active > .md-nav__link::before,
+/* (2) Sidebar — G symbol on active item only, no duplication */
+/* Use only the more specific selector to avoid double firing */
 .md-nav__link--active::before {
   content: '';
   display: inline-block;
@@ -298,13 +298,14 @@
   flex-shrink: 0;
 }
 
-/* Sidebar section labels — G symbol prefix */
+/* Ensure parent item doesn't also add a ::before when child is active */
+.md-nav__item--active > .md-nav__link::before {
+  display: none;
+}
+
+/* Sidebar section labels — no background image to avoid overlap with ::before */
 .md-nav__title {
-  background-image: url('../assets/logo-g.png');
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 11px 20px;
-  padding-left: 1.4rem !important;
+  padding-left: 0.6rem !important;
 }
 
 /* Oyster bullet points on norms/all-roles lists */
